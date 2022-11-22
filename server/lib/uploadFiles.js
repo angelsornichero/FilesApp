@@ -13,7 +13,7 @@ module.exports = (req, res) => {
 
     });
 
-    res.json({succes: true, message: 'Files Uploaded correctly'})
+    res.json({message: 'Files Uploaded correctly', succes: true})
 }
 
 
