@@ -1,5 +1,4 @@
 node_modules
 package-lock.json
 server/.env
-server/storage/*
 server/db.js
