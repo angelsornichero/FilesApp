@@ -1,7 +1,7 @@
 const pool = require('../db')
 const error = require('../middlewares/error-response')
 const bcrypt = require('bcryptjs')
-
+const jsonwebtoken = require('jsonwebtoken')
 
 module.exports = async (req, res) => {
     const { username, password } = req.body
@@ -14,6 +14,8 @@ module.exports = async (req, res) => {
     const validPassword = await bcrypt.compare(password, user.encrypt_password);
     if (!validPassword) error({statusCode: 403, message: '[!] Your password is incorrect'}, res)
 
-    res.json({message: '[*] Your are correctly login', success: true, token: user.jwt})
+    const jwt = jsonwebtoken.sign({ username: username, password: password}, process.env.JWT_SECRET);
+
+    res.json({message: '[*] Your are correctly login', success: true, token: jwt})
 
 }

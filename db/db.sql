@@ -6,8 +6,7 @@ CREATE TABLE users (
     username VARCHAR(50) PRIMARY KEY,
     name VARCHAR(50) NOT NULL,
     encrypt_password VARCHAR(100) NOT NULL,
-    email VARCHAR(50) NOT NULL,
-    jwt VARCHAR(120) NOT NULL
+    email VARCHAR(50) NOT NULL
 );
 
 """USERS FOR TESTING"""
