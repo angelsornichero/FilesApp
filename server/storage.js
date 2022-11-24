@@ -1,7 +1,7 @@
 require('dotenv').config()
 
 
-const storage = process.env.STORAGE
+const storage = process.env.SAVE_STORAGE
 
 if(!storage) {
     console.error('storage path not defined', 'Write a path in .env')
