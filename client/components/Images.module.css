@@ -1,0 +1,20 @@
+.sliderContainer {
+    display: flex;
+    width: 90%;
+    height: 300vh;
+    overflow-x: scroll;
+    position: relative;
+    left: 4.5%;
+    margin: 20px 0px;
+    
+    scroll-snap-type: x mandatory;
+}
+  
+.sliderContainer img {
+    flex: 0 0 100%;
+    width: 100%;
+    object-fit: contain;
+  
+    /* Vamos a añadir esto 👇 */
+    scroll-snap-align: center;
+  }
