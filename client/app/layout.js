@@ -1,6 +1,6 @@
-import { Navigation } from "../components/Navigation.jsx"
+import { Navigation } from "../components/Navigation/Navigation.jsx"
 import '../styles/globals.css'
-// import { Images } from '../components/Images'
+
 
 
 export default function RootLayout({ children }) {
@@ -9,6 +9,7 @@ export default function RootLayout({ children }) {
       <body>
         <Navigation />
         {children}
+
       </body>
     </html>
   )

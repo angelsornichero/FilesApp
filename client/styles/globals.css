@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Glitch&display=swap');
+
 html,
 body {
   padding: 0;
@@ -24,8 +27,34 @@ a {
     background: #2b6777;
   }
   .title {
-    font-size: 50px;
-    margin-bottom: 50px;
+    font-size: 100px;
+    
+    text-align: center;
+    font-family: 'Permanent Marker', sans-serif;
   }
+  .paragraph {
+    font-size: 30px;
+    margin: 10px 50px;
+    text-align: justify;
+
+  }
+  .h4 {
+    font-family: 'Rubik Glitch', cursive;
+    font-size: 50px;
+    text-align: center;
+    margin-top: 70px;
+    color: #ffe4c4;
+}
+.image {
+  border: 8px solid #52ab98;
+  border-radius: 100%;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+}
+.about-div {
+  display: flex;
+  justify-content: space-around;
+  margin: 0px 100px;
+}
 
 }
