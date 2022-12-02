@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
 
 
 
@@ -25,6 +25,7 @@
 .title {
     font-size: 50px;
     margin-bottom: 50px;
+    font-family: 'Permanent Marker', sans-serif;
 }
 
 .inputContainer {
@@ -63,7 +64,7 @@
     margin-left: auto;
     padding: 15px 30px;
     border: none;
-    background-color: #2b6777;
+    background-color: #52525E;
     color: #fff;
     border-radius: 6px;
     cursor: pointer;
@@ -72,7 +73,7 @@
   }
   
   .submitBtn:hover {
-    background-color: #2b6777;
+    background-color: #31313C;
     transform: translateY(-2px);
   }
 
@@ -113,3 +114,6 @@
     text-align: center;
     padding-top: 20px;
   }
+.link:hover {
+  text-decoration: underline;
+}

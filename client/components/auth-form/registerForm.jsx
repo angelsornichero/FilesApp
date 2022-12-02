@@ -30,7 +30,7 @@ return (
         <label for="" className={styles.label}>Email</label>
       </div>
       <div className={styles.inputContainer}>
-        <label for="" className={styles.label}>Already registered? Click here: <Link href="/login">Login</Link></label>
+        <label for="" className={styles.label}>Already registered? Click here: <Link className={styles.link} href="/login">Login</Link></label>
       </div>
       <input type="submit" className={styles.submitBtn} value="Sign up" />
     
