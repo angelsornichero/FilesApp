@@ -12,6 +12,7 @@ auth.isAuthenticated = (req, res, next) => {
     }
     catch(err) {
         error({statusCode: 401, message: '[!] The token is invalid'}, res)
+        
     }
     
     return next()

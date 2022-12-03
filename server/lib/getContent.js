@@ -11,7 +11,8 @@ const getContent = (path, res) => {
         })
     }
     catch {
-        error({statusCode: 418, message: '[!] The path is not valid'}, res)
+        // error({statusCode: 418, message: '[!] The path is not valid'}, res)
+        
     }
 }
 

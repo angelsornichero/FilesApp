@@ -1,5 +1,14 @@
+'use client'
 import styles from './Scroll.module.css'
 
 export function ScrollDown () {
-    return <div className={styles.scrollDown}></div>
+    const handleclick = (event) => {
+        window.scrollTo(0, document.querySelector('.homePageInfo_container__TDdQC').scrollHeight, 'smooth')
+        
+    }
+    return (
+        <div onClick={handleclick} className={styles.scrollDown}></div>
+        
+       
+    )
 }
