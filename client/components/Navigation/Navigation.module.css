@@ -23,3 +23,16 @@
     text-decoration: underline;
     color: #2b6777;
 }
+
+.Logout {
+    color: #2b6777;
+    background-color: transparent;
+    border: none;
+    font-size: 20px;
+    font-family: 'Work Sans', sans-serif;
+    cursor: pointer;
+}
+.Logout:hover {
+    text-decoration: underline;
+
+}

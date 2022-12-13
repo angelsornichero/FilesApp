@@ -25,7 +25,7 @@ export function RegisterForm () {
     }
     const response = await RegisterApi(user)
     setCookie(response.token)
-    router.push('/')
+    router.push('/dashboard')
   }
 
   return (
@@ -57,7 +57,7 @@ export function RegisterForm () {
         </div>
 
         <div className={styles.inputContainer}>
-          <input type="text" name="email" className={styles.input} placeholder="a" value={email} 
+          <input type="email" name="email" className={styles.input} placeholder="a" value={email} 
           onChange={({target}) => setEmail(target.value)} />
           <label for="" className={styles.label}>Email</label>
         </div>

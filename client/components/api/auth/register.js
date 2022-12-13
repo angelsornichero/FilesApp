@@ -2,7 +2,7 @@
 import axios from 'axios'
 
 
-const api = axios.create({baseURL: 'http://localhost:4000'})
+const api = axios.create({baseURL: process.env.baseURL})
 
 export async function RegisterApi (user) {
     const {name, username, password, repeat_password, email} = user

@@ -11,15 +11,16 @@ export function LoginForm () {
   const [password, setPassword] = useState('')
   const router = useRouter()
 
-  const submitForm = (event) => {
+  const submitForm = async (event) => {
     event.preventDefault()
     const user = {
       username,
       password
     }
-    const response = LoginApi(user)
+    const response = await LoginApi(user)
+    console.log(response)
     setCookie(response.token) 
-    router.push('/')
+    router.push('/dashboard')
   }
 
   return (
