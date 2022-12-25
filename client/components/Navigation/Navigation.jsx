@@ -59,13 +59,14 @@ const isAuth = () => {
   return true
 }
 
-const handleLogout = () => {
-  const remove = removeCookie()
-  const router = useRouter()
-  if (remove === true) router.push('/')
-  router.push('/')
-}
+
 export function Navigation () {
+  const handleLogout = () => {
+    const remove = removeCookie()
+    const router = useRouter()
+    if (remove === true) router.push('/')
+    router.push('/')
+  }
   return (
     <header className={styles.header}>
       <nav>

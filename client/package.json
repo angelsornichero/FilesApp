@@ -14,10 +14,14 @@
     "dotenv": "^16.0.3",
     "eslint": "8.28.0",
     "eslint-config-next": "13.0.5",
+    "font-awesome": "^4.7.0",
+    "jose": "^4.11.1",
     "jsonwebtoken": "^8.5.1",
     "next": "13.0.5",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "react-fontawesome": "^1.7.1",
+    "react-icons": "^4.7.1"
   },
   "devDependencies": {
     "standart": "^6.1.0"
