@@ -1,6 +1,7 @@
 const fs = require('fs')
 const error = require('../middlewares/error-response')
 const normalizePath = require('./path') 
+const whatUser = require('../auth/whatUser')
 require('dotenv').config()
 
 const getContent = (path, res) => {
@@ -11,8 +12,7 @@ const getContent = (path, res) => {
         })
     }
     catch {
-        // error({statusCode: 418, message: '[!] The path is not valid'}, res)
-        
+        error({statusCode: 404, message: '[!] The path is not valid'}, res)
     }
 }
 
@@ -21,6 +21,7 @@ const getContent = (path, res) => {
 
 module.exports = (req, res) => {
     const path = normalizePath(req, req.params.path)
+    const user = whatUser(req)
     content = getContent(path.absolutePath, res)
     
     directories = []
@@ -36,7 +37,7 @@ module.exports = (req, res) => {
         }
     });
     
-    res.json({path: path.relativePath, files: filesArray, directories: directories})
+    res.json({user: user, path: path.relativePath, files: filesArray, directories: directories})
 }
     
 

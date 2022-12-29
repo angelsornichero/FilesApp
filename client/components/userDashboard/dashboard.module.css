@@ -29,3 +29,11 @@
     display: flex;
     flex-wrap: nowrap;
 }
+.path { 
+    margin: 20px 200px;
+    background-color: #091c29;
+    border: 3px solid #091c29;
+    border-radius: 10px 10px 10px 10px;
+    font-size: 30px;
+    padding: 10px 10px 10px 10px;
+}
