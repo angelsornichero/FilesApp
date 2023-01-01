@@ -11,12 +11,13 @@ const checkPath = (path) => {
 
 module.exports = (req, res) => {    
     const path = normalizePath(req, req.params.path)
-    const files = req.files.undefined
+    const files = req.files.files
+    
     if (!req.files) {
             error({statusCode: 400, message: 'NO files attached'}, res)
         }
     if (checkPath(path.absolutePath) === false) error({statusCode: 418, message: '[!] The path is not valid'}, res)
-    
+    if (typeof files === 'object') files.mv(path.absolutePath + '/' + files.name)
     else {
         files.forEach(file => {
             file.mv(path.absolutePath + '/' + file.name)        

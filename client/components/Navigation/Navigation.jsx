@@ -6,6 +6,8 @@ import JWT from 'jsonwebtoken'
 import { removeCookie } from "../api/auth/cookies/removeCookie"
 import { useRouter } from "next/navigation"
 
+
+
 const links = [{
   label: 'Home',
   route: '/',
@@ -45,27 +47,29 @@ const linksLoged = [{
   type: 'button'
 }
 ]
-
-const isAuth = () => {
-  const cookieJWT = cookie.get('sessionJWT')
-  console.log(cookie.get('sessionJWT'))
-  try {
-    const jwt = JWT.verify(cookieJWT, process.env.JWT_SECRET)
-    if (!jwt) return null
-  }
-  catch {
-    return null
-  }
-  return true
-}
-
-
 export function Navigation () {
+  const router = useRouter()
+  const isAuth = () => {
+    const cookieJWT = cookie.get('sessionJWT')
+    console.log(cookie.get('sessionJWT'))
+    try {
+      const jwt = JWT.verify(cookieJWT, process.env.JWT_SECRET)
+      if (!jwt) return null
+    }
+    catch {
+      return null
+    }
+    return true
+  }
+
+
+
   const handleLogout = () => {
     const remove = removeCookie()
-    const router = useRouter()
-    if (remove === true) router.push('/')
-    router.push('/')
+    if (remove === true) window.location.href = '/'
+
+    return false
+    
   }
   return (
     <header className={styles.header}>

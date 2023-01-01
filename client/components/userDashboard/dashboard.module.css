@@ -5,29 +5,44 @@
     font-style: bold;
 }
 .directories {
-    height: 80px;
+    height: 130px;
     width: 200px;
     margin: 50px 20px;
     text-align: center;
-    padding-top: 19px;
+    padding-top: 5px;
     border: 1px solid #0c293b;
     border-radius: 20px 20px 20px 20px;
     background-color: #0c293b;
+    font-size: 15px;
 }
 .files { 
-    height: 80px;
+    height: 130px;
     width: 200px;
     margin: 50px 20px;
     text-align: center;
-    padding-top: 19px;
+    
     border: 1px solid #13415e;
     border-radius: 20px 20px 20px 20px;
     background-color: #13415e;
 }
+.download {
+    background-color: #0f4242;
+    font-size: 25px;
+    cursor: pointer;
+    border: 4px solid #0f4242;
+    border-radius: 6px 6px 6px 6px;
+}
+.delete { 
+    background-color: #5c0606;
+    font-size: 25px;
+    cursor: pointer;
+    border: 4px solid #5c0606;
+    border-radius: 6px 6px 6px 6px;
+}
 .content {
     margin: 50px 200px;
     display: flex;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
 }
 .path { 
     margin: 20px 200px;
@@ -36,4 +51,138 @@
     border-radius: 10px 10px 10px 10px;
     font-size: 30px;
     padding: 10px 10px 10px 10px;
+}
+.functionsFiles {
+    display: flex;
+    gap: 10px;
+    width: 100%;
+    justify-content: center;
+}
+.form {
+    margin: 30px 200px;
+    background-color: #0d283a;
+    border: 2px solid #0d283a;
+    border-radius: 10px 10px 10px 10px;
+    display: flex;
+    justify-content: space-around;
+}
+.input {
+    display: none;
+}
+
+.label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #fff;
+    background-color: #106BA0;
+    border: 3px solid #106BA0;
+    border-radius: 4px 4px 4px 4px;
+    display: inline-block;
+    transition: all .5s;
+    cursor: pointer;
+    padding: 15px 40px !important;
+    text-transform: uppercase;
+    width: fit-content;
+    text-align: center;
+    margin: 50px 20px;
+    
+}
+
+.count {
+    color: #fff;
+    margin: 50px 0px;
+    padding-top: 15px;
+    font-size: 20px;
+    font-weight: 600;
+}
+.send {
+    background-color: #0f4242;
+    margin: 45px 0px;
+    width: 250px;
+    height: 50px;
+    font-size: 25px;
+    font-weight: 600;
+    border: 4px solid #0f4242;
+    border-radius: 10px 10px 10px 10px;
+    cursor: pointer;
+}
+
+.mkdirContent {
+    background-color: #0c3628;
+    border: 3px solid #0c361d;
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+    border-radius: 10px 10px 10px 10px;
+    margin: 10px 200px;
+}
+.inputDir {
+    margin: 30px 0px;
+    background-color: transparent;
+    border: 3px solid #13415e;
+    border-radius: 4px 4px 4px 4px;
+    height: 50px;
+    width: 400px;
+    color: #fff;
+    padding-left: 10px;
+    font-size: 20px
+}
+
+.buttonDir {
+    margin: 30px 0px;
+    background-color: #13415e;
+    border: 3px solid #13415e;
+    border-radius: 4px 4px 4px 4px;
+    height: 50px;
+    width: 200px;
+    color: #fff;
+    padding-left: 10px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.inputDir::placeholder {
+    color: #fff;
+}
+
+.modal {
+    display: none;
+    position : fixed;
+    top: 50%;
+    left: 50%;
+    transform : translate(-50%,-50%);
+    background-color: rgb(51, 44, 44);
+    padding: 50px;
+    z-index: 1000;
+    border: 3px solid rgb(51, 44, 44);
+    border-radius: 20px 20px 20px 20px;
+}
+.eliminateFunctions {
+    display: flex;
+    gap: 20px; 
+    justify-content: center;
+    margin: 20px 60px;
+}
+.eliminateTitle {
+    display: block;
+    width: 100%;
+}
+
+.closeBtn {
+    width: 150px;
+    height: 60px;
+    background-color: #13415e;
+    border: 3px solid #13415e;
+    border-radius: 4px 4px 4px 4px;
+    cursor: pointer;
+    font-size: 30px;
+}
+.eliminateBtn {
+    width: 150px;
+    height: 60px;
+    background-color: #5e1813;
+    border: 3px solid #5e1813;
+    border-radius: 4px 4px 4px 4px;
+    cursor: pointer;
+    font-size: 30px;
 }
