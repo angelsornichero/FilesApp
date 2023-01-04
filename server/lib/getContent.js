@@ -20,12 +20,15 @@ const getContent = (path, res) => {
 
 
 module.exports = (req, res) => {
+    
     const path = normalizePath(req, req.params.path)
     const user = whatUser(req)
+    
     content = getContent(path.absolutePath, res)
     
     directories = []
     filesArray = []
+    console.log(content)
     content.forEach(file => {
         if(fs.lstatSync(path.absolutePath + '/' + file).isDirectory() === true) {
             directories.push(file)

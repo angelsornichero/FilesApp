@@ -1,10 +1,12 @@
 'use client'
-import cookieCutter from 'cookie-cutter'
 
-export const setCookie = (token) => {
+
+import { setCookie } from 'cookies-next';
+
+export const putCookie = (token) => {
     try {
         console.log(token)
-        cookieCutter.set('sessionJWT', token)
+        setCookie('sessionJWT', token)
         return true
     }
     catch {

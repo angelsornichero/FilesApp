@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react"
 import axios from "axios"
 import styles from './dashboard.module.css'
-import cookie from 'cookie-cutter'
+import { getCookie } from 'cookies-next';
 import { FaRegFolderOpen } from 'react-icons/fa'
 
 export const MkdirForm = (path) => {
@@ -14,7 +14,7 @@ export const MkdirForm = (path) => {
 
     useEffect(() => {
         return () => {
-            setJwt(cookie.get('sessionJWT'))
+            setJwt(getCookie('sessionJWT'))
         }
     })
 

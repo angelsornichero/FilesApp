@@ -3,7 +3,7 @@ import Link from "next/link"
 import styles from './Form.module.css'
 import { RegisterApi } from "../api/auth/register"
 import { useState } from "react"
-import { setCookie } from "../api/auth/cookies/setCookie"
+import { setCookie } from 'cookies-next';
 import { useRouter }  from 'next/navigation'
 
 export function RegisterForm () {
@@ -24,7 +24,8 @@ export function RegisterForm () {
       email
     }
     const response = await RegisterApi(user)
-    setCookie(response.token)
+    console.log(response.token)
+    setCookie('sessionJWT', response.token)
     router.push('/dashboard')
   }
 

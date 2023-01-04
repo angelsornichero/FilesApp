@@ -1,10 +1,9 @@
 'use client'
 import styles from './dashboard.module.css'
 import axios from 'axios'
-import cookie from 'cookie-cutter'
+import { getCookie } from 'cookies-next';
 import { useEffect, useState } from 'react' 
 import { FaRegFolder, FaRegFile, FaArrowLeft, FaDownload, FaTrashAlt } from 'react-icons/fa'
-import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import fileDownload from 'js-file-download'
 
@@ -19,9 +18,11 @@ export const ContentComponent =  (path) => {
     const [opened, setOpened] = useState(false)
     const [fileToRemove, setFileToRemove] = useState('')
     const router = useRouter()
-    useEffect(() => {
-        return async () => {
-            const jwt = cookie.get('sessionJWT')
+    
+    useEffect(async () => {
+        
+            console.log('UseEffect')
+            const jwt = getCookie('sessionJWT')
             const req = await axios.post(process.env.baseURL + `/api/files/${reqPath}`, {}, {
                 headers: {
                     authorization: `token ${jwt}`
@@ -30,16 +31,16 @@ export const ContentComponent =  (path) => {
                 router.push('/404')
             })
             
+            
             setDirectories(req.data.directories)
             setFiles(req.data.files)
             setPathState(req.data.path.replace(`${req.data.user}`, '').replaceAll('/', '-').replaceAll('--', '-'))
             setLoading(false)
-        }
-    }, [])
+        
+        }, [])
 
     const downloadContent = (name) => {
-        console.log('click', name)
-        const jwt = cookie.get('sessionJWT')
+        const jwt = getCookie('sessionJWT')
         axios.post(process.env.baseURL + `/api/download/${reqPath}`, {
             fileName: name
         }, {
@@ -48,7 +49,7 @@ export const ContentComponent =  (path) => {
             },
             responseType: 'blob'
         }).catch((error) => {
-            console.log(error)
+            console.log(error, 'e')
        }).then((res) => {
         fileDownload(res.data, name)
        })
@@ -72,7 +73,7 @@ export const ContentComponent =  (path) => {
   }
 
   const eliminateFile = () => {
-    const jwt = cookie.get('sessionJWT')
+    const jwt = getCookie('sessionJWT')
         axios.post(process.env.baseURL + `/api/remove-file/${reqPath}`, {
             fileName: fileToRemove
         }, {
@@ -81,7 +82,7 @@ export const ContentComponent =  (path) => {
             }
             
         }).catch((error) => {
-            console.log(error)
+            console.log(error, 'e')
        }).then((res) => {
             window.location.reload()
        })
@@ -97,13 +98,13 @@ export const ContentComponent =  (path) => {
                     <>
                         
                         <div className={styles.content} >
-                            {pathState === '' ? <div></div> : <Link href={'/dashboard/' + manipulateString(pathState)}><h1 className={styles.directories}><FaArrowLeft /></h1></Link>}
+                            {pathState === '' ? <div></div> : <a href={'/dashboard/' + manipulateString(pathState)}><h1 className={styles.directories}><FaArrowLeft /></h1></a>}
                             {directories.map(directory => (
                                 <div className={styles.directories}>
-                                    <Link href={`/dashboard/${pathState + '-' + directory}`}>
+                                    <a href={`/dashboard/${pathState + '-' + directory}`}>
                                         <h1 key={directory}>
                                         <FaRegFolder /> {directory} </h1>
-                                    </Link>
+                                    </a>
                                     <button onClick={() => handleModal(directory)} className={styles.delete}><FaTrashAlt/></button>
                                 </div>
                             ))}

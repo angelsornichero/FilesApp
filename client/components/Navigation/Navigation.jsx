@@ -1,7 +1,7 @@
 'use client'
 import Link from "next/link"
 import styles from './Navigation.module.css'
-import cookie from 'cookie-cutter'
+import { getCookie } from 'cookies-next';
 import JWT from 'jsonwebtoken'
 import { removeCookie } from "../api/auth/cookies/removeCookie"
 import { useRouter } from "next/navigation"
@@ -50,8 +50,8 @@ const linksLoged = [{
 export function Navigation () {
   const router = useRouter()
   const isAuth = () => {
-    const cookieJWT = cookie.get('sessionJWT')
-    console.log(cookie.get('sessionJWT'))
+    const cookieJWT = getCookie('sessionJWT')
+    console.log(getCookie('sessionJWT'))
     try {
       const jwt = JWT.verify(cookieJWT, process.env.JWT_SECRET)
       if (!jwt) return null

@@ -11,6 +11,7 @@
   "dependencies": {
     "axios": "^1.2.0",
     "cookie-cutter": "^0.2.0",
+    "cookies-next": "^2.1.1",
     "dotenv": "^16.0.3",
     "eslint": "8.28.0",
     "eslint-config-next": "13.0.5",
@@ -22,7 +23,8 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-fontawesome": "^1.7.1",
-    "react-icons": "^4.7.1"
+    "react-icons": "^4.7.1",
+    "sharp": "^0.31.3"
   },
   "devDependencies": {
     "standart": "^6.1.0"

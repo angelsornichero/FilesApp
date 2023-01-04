@@ -1,9 +1,9 @@
 'use client'
-import cookieCutter from 'cookie-cutter'
+import { deleteCookie } from 'cookies-next'
 
 export const removeCookie = () => {
     try {
-        cookieCutter.set('sessionJWT', '', { expires: new Date(0) })
+        deleteCookie('sessionJWT')
         return true
     }
     catch (error) {

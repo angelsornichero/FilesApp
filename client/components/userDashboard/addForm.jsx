@@ -1,19 +1,18 @@
 'use client'
 import axios from 'axios'
-import cookie from 'cookie-cutter'
+import { getCookie } from 'cookies-next';
 import { useEffect, useState } from 'react'
 import styles from './dashboard.module.css'
 
 export const AddForm = (path) => {
     const reqPath = path.path.path
-    console.log(reqPath)
     const [files, setFiles] = useState([])
     const [count, setCount] = useState(0)
     const [jwt, setJwt] = useState('')
 
     useEffect(() => {
         return () => {
-            setJwt(cookie.get('sessionJWT'))
+            setJwt(getCookie('sessionJWT'))
         }
     })
 

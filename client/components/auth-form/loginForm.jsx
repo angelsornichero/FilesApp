@@ -3,7 +3,7 @@ import styles from './Form.module.css'
 import Link from 'next/link'
 import { useState } from 'react'
 import { LoginApi } from '../api/auth/login'
-import { setCookie } from '../api/auth/cookies/setCookie'
+import { setCookie } from 'cookies-next';
 import { useRouter }  from 'next/navigation'
 
 export function LoginForm () {
@@ -19,7 +19,7 @@ export function LoginForm () {
     }
     const response = await LoginApi(user)
     console.log(response)
-    setCookie(response.token) 
+    setCookie('sessionJWT', response.token) 
     router.push('/dashboard')
   }
 
