@@ -9,5 +9,4 @@ CREATE TABLE users (
     email VARCHAR(50) NOT NULL
 );
 
-"""USERS FOR TESTING"""
-INSERT INTO users(username, name, password, email) VALUES ('user_test', 'test', 'test', 'test@test.com');
+INSERT INTO users(username, name, encrypt_password, email) VALUES ('user_test', 'test', 'test', 'test@test.com');
