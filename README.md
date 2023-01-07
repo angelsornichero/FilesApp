@@ -3,7 +3,7 @@
 **In this app you can host files and directories in your own local network** 
 ## Table of contents
 * [Project Installation Linux & Windows](#project-installation-linux--windows)
-* [Run on development setup](##run-on-development--setup)
+* [Run on development setup](#run-on-development--setup)
 	* [Database](#database)
 	* [Backend](#backend)
 	* [Frontend](#frontend)
