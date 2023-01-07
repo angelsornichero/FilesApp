@@ -2,12 +2,12 @@
 
 **In this app you can host files and directories in your own local network** 
 ## Table of contents
-* [Project Installation Linux & Windows](#project-installation-linux-&-windows)
-* [Run on development setup](#development-mode-setup)
+* [Project Installation Linux & Windows](#project-installation-linux--windows)
+* [Run on development setup](##run-on-development--setup)
 	* [Database](#database)
 	* [Backend](#backend)
 	* [Frontend](#frontend)
-* [Run on production setup](#production-mode-setup)
+* [Run on production setup](#run-on-production-setup)
 	* [Database](#database-1)
 	* [Backend](#backend-1)
 	* [Frontend](#frontend-1)
